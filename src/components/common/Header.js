@@ -18,7 +18,7 @@ class Header extends Component {
 
         <View style={styles.menuContactStyle}>
 
-          <TouchableOpacity onPress={() => Actions.addItem()}>
+          <TouchableOpacity onPress={() => Actions.itemList()}>
             <View>
               <Icon name='cutlery'
                 size={30}
@@ -27,7 +27,7 @@ class Header extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => Actions.itemList()}>
+          <TouchableOpacity onPress={() => Actions.contact()}>
             <View>
               <Icon name='phone'
                 size={30}
@@ -46,10 +46,12 @@ class Header extends Component {
 const styles = {
   headerWrapperStyle: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    backgroundColor: '#000000'
   },
   headerLogoStyle: {
-    marginLeft: 10
+    padding: 10,
+    alignItems: 'center'
   },
   menuContactStyle: {
     flexDirection: 'row',
@@ -62,7 +64,7 @@ const styles = {
     marginLeft: 20
   },
   cutleryStyle: {
-    color: "#000000",
+    color: 'white',
     marginRight: 20,
     marginLeft: 20
   }

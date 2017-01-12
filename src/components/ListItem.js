@@ -7,7 +7,7 @@ import { Card, CardSection, Button } from './common';
 
 class ListItem extends Component {
   onButtonPress() {
-    Actions.editItem({ library: this.props.library });
+    Actions.titleMain();
   }
 
   getImage(id) {
@@ -32,19 +32,21 @@ class ListItem extends Component {
 
     return (
       <Card>
-        <CardSection style={{ padding: 20 }}>
+
+        <CardSection style={{ padding: 5 }}>
           <TouchableOpacity
             onPress={this.onButtonPress.bind(this)}>
             <View>
-              <Image
-                style={styles.imageStyle}
-                source={icon}
-              />
               <Text style={styles.textStyle}>
                 {title}
               </Text>
             </View>
           </TouchableOpacity>
+        </CardSection>
+
+        <CardSection>
+          <Image source={icon}
+            style={styles.imageStyle}/>
         </CardSection>
       </Card>
     );
@@ -53,15 +55,15 @@ class ListItem extends Component {
 
 const styles = {
   textStyle: {
-    color: 'red',
+    color: 'black',
     fontSize: 20,
     fontWeight: '600',
     paddingTop: 5,
     paddingBottom: 5
   },
   imageStyle: {
-    height: 100,
     flex: 1,
+    height: 300,
     width: null
   }
 }

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 
+import Title from './components/Title';
 import LibraryList from './components/LibraryList';
-import ItemEdit from './components/ItemEdit';
-import ItemAdd from './components/ItemAdd';
+import Contact from './components/Contact';
 
 class RouterComponent extends Component {
   customTitle() {
@@ -28,8 +28,13 @@ class RouterComponent extends Component {
 
   render() {
     return (
-      <Router sceneStyle={{ paddingTop: 5}}>
+      <Router>
       <Scene key="main">
+        <Scene
+          key="titleMain"
+          component={Title}
+          hideNavBar={true}
+        />
         <Scene
           //onRight={() => Actions.addItem()}
           //rightTitle="MENU"
@@ -40,15 +45,11 @@ class RouterComponent extends Component {
           hideNavBar={true}
         />
         <Scene
-          key="editItem"
-          component={ItemEdit}
-          title="EDIT ITEM FORM"
+          key="contact"
+          component={Contact}
+          hideNavBar={true}
         />
-        <Scene
-          key="addItem"
-          component={ItemAdd}
-          title="Add New Item"
-        />
+
       </Scene>
       </Router>
     );
