@@ -40,6 +40,8 @@ export default (state = data, action) => {
         const todoId = action.payloadId;
           return state.filter(todo => todo.id !== todoId);
 
+
+
     default:
       return state;
   }

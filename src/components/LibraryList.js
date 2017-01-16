@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { ListView, View } from 'react-native';
 import { connect } from 'react-redux';
+
+import fetchMenu from '../actions';
+
 import Header from './common/Header'
 import ListItem from './ListItem';
 
@@ -11,6 +14,7 @@ class LibraryList extends Component {
       rowHasChanged: (r1, r2) => r1 !== r2
     })
   }
+
 
 
   renderRow(library) {
@@ -37,4 +41,4 @@ const mapStateToProps = state => {
   return { librariesFromList: state.selectedLibraryIdFromReducer }
 }
 
-export default connect(mapStateToProps)(LibraryList);
+export default connect(mapStateToProps, fetchMenu)(LibraryList);

@@ -45,7 +45,7 @@ class ListItem extends Component {
         </CardSection>
 
         <CardSection>
-          <Image source={icon}
+          <Image source={{ uri: image }}
             style={styles.imageStyle}/>
         </CardSection>
       </Card>

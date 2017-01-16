@@ -2,21 +2,21 @@
   {
     "id": 0,
     "title": "spiced beef",
-    "description": "Webpack is a module bundler"
+    "description": "prime cut beef"
   },
   {
     "id": 1,
     "title": "herbed chicken",
-    "description": "React makes it"
+    "description": "hot and delicous chicken"
   },
   {
     "id": 2,
     "title": "cheesy potato",
-    "description": "Redux is a predictable state container"
+    "description": "simply delicous"
   },
   {
     "id": 3,
     "title": "rice pilaf",
-    "description": "Redux is a predictable state container"
+    "description": "satisfy your craving"
   }
 ]

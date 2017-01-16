@@ -6,6 +6,8 @@ import Title from './components/Title';
 import LibraryList from './components/LibraryList';
 import Contact from './components/Contact';
 
+import MenuList from './components/MenuList'
+
 class RouterComponent extends Component {
   customTitle() {
     return (
@@ -47,6 +49,11 @@ class RouterComponent extends Component {
         <Scene
           key="contact"
           component={Contact}
+          hideNavBar={true}
+        />
+        <Scene
+          key="menu"
+          component={MenuList}
           hideNavBar={true}
         />
 
