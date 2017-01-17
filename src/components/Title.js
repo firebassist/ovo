@@ -14,7 +14,7 @@ class Title extends Component {
           <Text style={styles.mainText}>Our Version Of - OVO</Text>
           <Text style={styles.mainText}>
             Bahay Sa Don Antonio: 26 Holy Spirit Drive
-            Quezon City
+            Quezon Ct
             Call +63 917 824 2271
           </Text>
         </BackgroundImage>

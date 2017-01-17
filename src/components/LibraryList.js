@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ListView, View } from 'react-native';
 import { connect } from 'react-redux';
 
-import fetchMenu from '../actions';
+import fetchMenuActionCreator from '../actions';
 
 import Header from './common/Header'
 import ListItem from './ListItem';
@@ -13,6 +13,10 @@ class LibraryList extends Component {
     this.dataSource = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
+  }
+
+  componentWillMount() {
+    this.props.fetchMenuActionCreator(this.props.dispatch)
   }
 
 
@@ -36,9 +40,11 @@ class LibraryList extends Component {
   }
 }
 
+
 const mapStateToProps = state => {
+  console.log("MAPSTATETOPROPS")
   console.log(state)
   return { librariesFromList: state.selectedLibraryIdFromReducer }
 }
 
-export default connect(mapStateToProps, fetchMenu)(LibraryList);
+export default connect(mapStateToProps, { fetchMenuActionCreator })(LibraryList);

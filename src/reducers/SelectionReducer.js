@@ -1,16 +1,11 @@
-import data from './LibraryList.json'
+//import data from './LibraryList.json'
 
-const initialState = [
-  {
-    "id": 1,
-    "title": "Sample Todo",
-    "description": "exmp"
-  }
-]
+const initialState = {
+  menus: []
+};
 
-//const todId = 1;
 
-export default (state = data, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'select_library':
       return state.map(todo => {
@@ -40,6 +35,10 @@ export default (state = data, action) => {
         const todoId = action.payloadId;
           return state.filter(todo => todo.id !== todoId);
 
+    case 'fetch_menu':
+      console.log(action.payload)
+      
+      return action.payload
 
 
     default:

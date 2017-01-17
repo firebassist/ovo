@@ -5,6 +5,9 @@ import Header from './common/Header'
 import ListItem from './ListItem';
 
 import api from '../Api'
+import { connect } from 'react-redux';
+
+import fetchMenuActionCreator from '../actions';
 
 class MenuList extends Component {
   state = {
@@ -39,4 +42,10 @@ class MenuList extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  console.log(state)
+  return { librariesFromList: state.selectedLibraryIdFromReducer }
+}
+
 export default MenuList;
+//export default connect(mapStateToProps, fetchMenuActionCreator)(MenuList);

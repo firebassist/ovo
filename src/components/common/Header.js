@@ -18,7 +18,7 @@ class Header extends Component {
 
         <View style={styles.menuContactStyle}>
 
-          <TouchableOpacity onPress={() => Actions.menu()}>
+          <TouchableOpacity onPress={() => Actions.itemList()}>
             <View>
               <Icon name='cutlery'
                 size={30}
