@@ -20,27 +20,21 @@ class ListItem extends Component {
 
     return (
       <Card>
-        <CardSection>
 
-        <TouchableOpacity
-          onPress={this.onButtonPress.bind(this)}>
-
-            <Image source={{ uri: image }}
-              style={styles.imageStyle} >
-
-              <CardSection style={{ padding: 5 }}>
-
-                  <View>
-                    <Text style={styles.textStyle}>
-                      {title}
-                    </Text>
-                  </View>
-
-              </CardSection>
-            </Image>
-
+        <CardSection style={{ padding: 5 }}>
+          <TouchableOpacity
+            onPress={this.onButtonPress.bind(this)}>
+            <View>
+              <Text style={styles.textStyle}>
+                {title}
+              </Text>
+            </View>
           </TouchableOpacity>
-          
+        </CardSection>
+
+        <CardSection>
+          <Image source={{ uri: image }}
+            style={styles.imageStyle}/>
         </CardSection>
       </Card>
     );
@@ -50,16 +44,14 @@ class ListItem extends Component {
 const styles = {
   textStyle: {
     color: '#ffff',
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: '600',
     paddingTop: 5,
     paddingBottom: 5
   },
   imageStyle: {
-    flex: 1,
-    height: windowDims.height/3.2,
-    width: windowDims.width,
-    flexDirection: 'column'
+    height: itemSize,
+    width: itemSize
   }
 }
 

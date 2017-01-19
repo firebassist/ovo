@@ -43,7 +43,10 @@ class LibraryList extends Component {
 
 const styles = {
   row: {
-    backgroundColor: 'rgba(0,0,0,.6)',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    backgroundColor: '#0b0a0a',
     paddingTop: 65
   }
 }
