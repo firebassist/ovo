@@ -11,8 +11,7 @@ const Card = (props) => {
 
 const styles = {
   containerStyle: {
-    elevation: 10,
-    padding: 5
+    flex: 1
   }
 };
 

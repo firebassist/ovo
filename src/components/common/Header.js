@@ -47,7 +47,7 @@ const styles = {
   headerWrapperStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#000000'
+    backgroundColor: '#1e2226'
   },
   headerLogoStyle: {
     padding: 10,

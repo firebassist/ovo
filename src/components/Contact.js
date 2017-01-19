@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-import Header from './common/Header';
+//import Header from './common/Header';
 import MapView from 'react-native-maps';
 
 
@@ -9,8 +9,7 @@ class Contact extends Component {
 
   render() {
     return (
-      <View>
-        <Header />
+      <View style={{ paddingTop: 65 }}>
 
         <MapView
           style={styles.map}

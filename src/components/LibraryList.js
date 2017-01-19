@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { ListView, View, Dimensions } from 'react-native';
+import { ListView, View } from 'react-native';
 import { connect } from 'react-redux';
 
-//import fetchMenuActionCreator from '../actions';
 import * as actions from '../actions';
 import Header from './common/Header'
 import ListItem from './ListItem';
@@ -31,9 +30,6 @@ class LibraryList extends Component {
   render() {
     const dataSource = this.dataSource.cloneWithRows(this.props.librariesFromList);
     return (
-      <View>
-      <Header />
-
       <ListView
         dataSource={dataSource}
         renderRow={this.renderRow}
@@ -41,27 +37,14 @@ class LibraryList extends Component {
 
       />
 
-      </View>
     );
   }
 }
 
 const styles = {
   row: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start'
-  },
-  textStyle: {
-    color: 'black',
-    fontSize: 16,
-    fontWeight: '600',
-    paddingTop: 5,
-    paddingBottom: 5
-  },
-  imageStyle: {
-    height: 150,
-    width: 150
+    backgroundColor: 'rgba(0,0,0,.6)',
+    paddingTop: 65
   }
 }
 
