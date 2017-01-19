@@ -7,6 +7,8 @@ import LibraryList from './components/LibraryList';
 import Contact from './components/Contact';
 
 import MenuList from './components/MenuList'
+import CategoryList from './components/CategoryList'
+import CategoryItem from './components/CategoryItem'
 
 class RouterComponent extends Component {
   customTitle() {
@@ -32,20 +34,21 @@ class RouterComponent extends Component {
     return (
       <Router>
       <Scene key="main">
+      <Scene
+        //onRight={() => Actions.addItem()}
+        //rightTitle="MENU"
+        key="itemList"
+        component={LibraryList}
+        //title="Item List in App"
+        //renderTitle={this.customTitle}
+        hideNavBar={true}
+      />
         <Scene
           key="titleMain"
           component={Title}
           hideNavBar={true}
         />
-        <Scene
-          //onRight={() => Actions.addItem()}
-          //rightTitle="MENU"
-          key="itemList"
-          component={LibraryList}
-          //title="Item List in App"
-          //renderTitle={this.customTitle}
-          hideNavBar={true}
-        />
+
         <Scene
           key="contact"
           component={Contact}
@@ -54,6 +57,16 @@ class RouterComponent extends Component {
         <Scene
           key="menu"
           component={MenuList}
+          hideNavBar={true}
+        />
+        <Scene
+          key="category"
+          component={CategoryList}
+          hideNavBar={true}
+        />
+        <Scene
+          key="citem"
+          component={CategoryItem}
           hideNavBar={true}
         />
 
