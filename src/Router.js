@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 import Title from './components/Title';
 import LibraryList from './components/LibraryList';
+import ItemView from './components/ItemView';
 import Contact from './components/Contact';
 
 import MenuList from './components/MenuList'
@@ -79,6 +80,10 @@ class RouterComponent extends Component {
           //renderTitle={this.customTitle}
           //renderLeftButton={this.customLeft}
           leftButtonIconStyle = {{ tintColor:'red'}}
+        />
+        <Scene
+          key="itemView"
+          component={ItemView}
         />
 
         <Scene

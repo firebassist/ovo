@@ -10,6 +10,13 @@ export const selectCatActionCreator = (category) => {
   }
 }
 
+export const selectTitleActionCreator = (id) => {
+  return {
+    type: 'select_title',
+    payloadId: id
+  }
+}
+
 export const fetchMenuActionCreator=(dispatch)=> {
   return (dispatch) => {
     api.getMenus().then(

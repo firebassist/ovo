@@ -1,29 +1,23 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Dimensions } from 'react-native';
+import { View, Text, Image, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import { SimpleButton, Card, CardSection, Input } from './common';
+//import ItemScreen from './ItemScreen';
 import * as actions from '../actions';
-import { Card, CardSection } from './common';
-
 
 const windowDims = Dimensions.get('window')
 const itemSize  = (windowDims.width / 2) - 15
 
 
-class ListItem extends Component {
-  onButtonPress() {
-    Actions.itemView({ library: this.props.library });
-  }
+class ItemView extends Component {
 
   render() {
     const { id, title, image } = this.props.library
 
     return (
       <Card>
-        <CardSection>
-
-        <TouchableOpacity
-          onPress={this.onButtonPress.bind(this)}>
+        <CardSection style={{ backgroundColor: 'rgba(11,10,10,.7)' }}>
 
             <Image source={{ uri: image }}
               style={styles.imageStyle} >
@@ -38,8 +32,6 @@ class ListItem extends Component {
 
               </CardSection>
             </Image>
-
-          </TouchableOpacity>
 
         </CardSection>
       </Card>
@@ -56,15 +48,18 @@ const styles = {
     paddingBottom: 5
   },
   imageStyle: {
-    flex: 1,
-    height: windowDims.height/3.2,
-    width: windowDims.width,
-    flexDirection: 'column'
+    //flex: 1,
+    height: windowDims.height/2,
+    width: null,
+    marginTop: 65,
+    marginLeft: 10,
+    marginRight: 10
   }
-}
+};
 
 const mapStateToProps = state => {
   return { selectedLibraryIdFromMapStateToProps: state.selectedLibraryIdFromReducer }
 }
 
-export default connect(mapStateToProps, actions)(ListItem);
+
+export default connect(null, actions)(ItemView);

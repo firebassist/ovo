@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListView, View } from 'react-native';
+import { ListView } from 'react-native';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
@@ -17,9 +17,7 @@ class LibraryList extends Component {
     })
   }
 
-  componentWillMount() {
-    this.props.fetchMenuActionCreator(this.props.dispatch)
-  }
+
 
 
 
@@ -43,11 +41,8 @@ class LibraryList extends Component {
 
 const styles = {
   row: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start',
-    backgroundColor: '#0b0a0a',
-    paddingTop: 65
+    backgroundColor: 'rgba(11,10,10,.7)',
+    paddingTop: 50
   }
 }
 
