@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native'
-//import Header from './common/Header'
+import { ScrollView, Text, Image } from 'react-native'
+
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
@@ -11,29 +11,33 @@ class Title extends Component {
 
   componentWillMount() {
     this.props.fetchMenuActionCreator(this.props.dispatch)
-    this.props.selectTitleActionCreator(0)
   }
 
-  render() {
-    return (
-        <BackgroundImage>
 
-          <View style={styles.wrapStyle}>
+  render() {
+    const titleT = this.props.librariesFromList[0].titleText
+    const titleImg = this.props.librariesFromList[0].titleImage
+    const backImg = this.props.librariesFromList[1].backImage
+
+    return (
+        <BackgroundImage source={{ uri: backImg }}>
+
+          <ScrollView contentContainerStyle={styles.wrapStyle}>
             <Image
-              source={require('../images/ovo-logo.jpg')}
+              source={{ uri: titleImg }}
               style={{ height: 80, width: 100 }}
             />
 
             <Text style={styles.mainText}>
-              Bahay Sa Don Antonio: 26 Holy Spirit Drive
-              mapStateToProps in title viewitem
-              Call +63 917 824 2271
+              {titleT}
             </Text>
 
-            <Text style={styles.mainText}>
+            <Image
+              source={{ uri: titleImg }}
+              style={{ height: 80, width: 100 }}
+            />
 
-            </Text>
-          </View>
+          </ScrollView>
         </BackgroundImage>
     );
   }
@@ -43,7 +47,7 @@ const styles = {
   wrapStyle: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 65
+    paddingTop: 165
   },
   mainText: {
     textAlign: 'center',
@@ -53,5 +57,8 @@ const styles = {
   }
 }
 
+const mapStateToProps = state => {
+  return { librariesFromList: state.selectedLibraryIdFromReducer }
+}
 
-export default connect(null, actions)(Title);
+export default connect(mapStateToProps, actions)(Title);

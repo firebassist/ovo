@@ -1,11 +1,9 @@
 //import data from './LibraryList.json'
 
-const initialState = {
-  menus: [
-    {"id":0,"title":"Garlic Pasta","category":"carbs","image":"https://dl.dropboxusercontent.com/s/dg9ftsssexbgb85/garlic-pasta.jpg","thumbnail_image":"https://i.imgur.com/K3KJ3w4h.jpg"},
-    {"id":1,"title":"Herbed Chicken","category":"protein","image":"https://dl.dropboxusercontent.com/s/832hih9k12gft7x/herbed-chicken.jpg","thumbnail_image":"https://i.imgur.com/K3KJ3w4h.jpg"}
+const initialState = [
+    {"id":0,"titleText":"CHANGE TO BLANK FROM REDUCER","category":"carbs","titleImage":"https://dl.dropboxusercontent.com/s/dg9ftsssexbgb85/garlic-pasta.jpg"},
+    {"id":1,"backText":"CHANGE BACKGROUND IMAGE","category":"protein","backImage":"https://dl.dropboxusercontent.com/s/bkv9xjl3w0ii8b1/Ovo-Title.jpg"}
   ]
-};
 
 
 export default (state = initialState, action) => {

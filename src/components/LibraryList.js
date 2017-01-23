@@ -3,11 +3,7 @@ import { ListView } from 'react-native';
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
-import Header from './common/Header'
 import ListItem from './ListItem';
-
-
-
 
 class LibraryList extends Component {
   constructor (props) {
@@ -16,10 +12,6 @@ class LibraryList extends Component {
       rowHasChanged: (r1, r2) => r1 !== r2
     })
   }
-
-
-
-
 
   renderRow(library) {
     return <ListItem library={library} />
@@ -45,7 +37,6 @@ const styles = {
     paddingTop: 50
   }
 }
-
 
 const mapStateToProps = state => {
   return { librariesFromList: state.selectedLibraryIdFromReducer }

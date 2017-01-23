@@ -20,7 +20,7 @@ export const selectTitleActionCreator = (id) => {
 export const fetchMenuActionCreator=(dispatch)=> {
   return (dispatch) => {
     api.getMenus().then(
-      data => dispatch({ type: 'fetch_menu', payload: data.menus })
+      data => dispatch({ type: 'fetch_menu', payload: data })
     );
   }
 }

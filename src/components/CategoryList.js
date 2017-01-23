@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 //import fetchMenuActionCreator from '../actions';
 import * as actions from '../actions';
-import Header from './common/Header'
 //import ListItem from './ListItem';
 import CategoryItem from './CategoryItem';
 

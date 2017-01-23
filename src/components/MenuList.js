@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 
-import Header from './common/Header'
 import ListItem from './ListItem';
 
 import api from '../Api'

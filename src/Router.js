@@ -15,18 +15,6 @@ import CategoryItem from './components/CategoryItem'
 //import customRight from './components/NavItems'
 
 class RouterComponent extends Component {
-  customTitle() {
-    return (
-      <View>
-          <Image
-            source={require('./images/ovo-logo.jpg')}
-            style={{ height: 50, width: 84 }}
-            resizeMode="contain"
-          />
-
-        </View>
-      )
-  }
 
   customRight() {
     return (

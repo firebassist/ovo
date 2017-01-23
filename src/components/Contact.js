@@ -29,9 +29,8 @@ class Contact extends Component {
          />
       </MapView>
 
-        <Text style={styles.mainText}>Our Version Of</Text>
         <Text style={styles.mainText}>
-          ADDRESS: Bahay Sa Don Antonio: 26 Holy Spirit Drive
+          Bahay Sa Don Antonio: 26 Holy Spirit Drive
           Quezon City, Philippines
         </Text>
         <Text style={styles.mainText}>
@@ -52,7 +51,7 @@ const styles = {
     fontSize: 16
   },
   map: {
-    height: 150,
+    height: 300,
     width: 300,
     margin: 10,
     borderWidth: 1,

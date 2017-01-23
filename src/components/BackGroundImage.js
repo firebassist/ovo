@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, Dimensions } from 'react-native';
+
+const windowDims = Dimensions.get('window')
 
 class BackgroundImage extends Component {
 
   render() {
     return (
-      <Image source={require('../images/main-background.jpg')}
+      <Image source={this.props.source}
         style={styles.backgroundImage}>
           {this.props.children}
       </Image>
@@ -15,11 +17,9 @@ class BackgroundImage extends Component {
 
 const styles = {
   backgroundImage: {
-    //flex: 1,
     width: null,
-    height: 600,
-    resizeMode: 'cover',
-    backgroundColor: '#000000'
+    height: windowDims.height,
+    resizeMode: 'cover'
   }
 }
 
