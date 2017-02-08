@@ -33,7 +33,6 @@ class LibraryList extends Component {
 
 const styles = {
   row: {
-    backgroundColor: 'rgba(11,10,10,.7)',
     paddingTop: 50
   }
 }

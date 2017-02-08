@@ -72,6 +72,9 @@ class RouterComponent extends Component {
         <Scene
           key="itemView"
           component={ItemView}
+          leftButtonIconStyle = {{ tintColor:'red'}}
+          title="Satisfy Your Craving"
+          titleStyle={styles.titleStyle}
         />
 
         <Scene

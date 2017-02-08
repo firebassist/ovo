@@ -7,17 +7,15 @@ import { SimpleButton, Card, CardSection, Input } from './common';
 import * as actions from '../actions';
 
 const windowDims = Dimensions.get('window')
-const itemSize  = (windowDims.width / 2) - 15
-
 
 class ItemView extends Component {
 
   render() {
-    const { id, title, image } = this.props.library
+    const { id, title, image, description } = this.props.library
 
     return (
       <Card>
-        <CardSection style={{ backgroundColor: 'rgba(11,10,10,.7)' }}>
+        <CardSection>
 
             <Image source={{ uri: image }}
               style={styles.imageStyle} >
@@ -34,6 +32,15 @@ class ItemView extends Component {
             </Image>
 
         </CardSection>
+
+        <CardSection>
+          <View>
+            <Text style={styles.descriptionStyle}>
+              {description}
+            </Text>
+          </View>
+        </CardSection>
+
       </Card>
     );
   }
@@ -48,13 +55,17 @@ const styles = {
     paddingBottom: 5
   },
   imageStyle: {
-    //flex: 1,
-    height: windowDims.height/2,
-    width: null,
+    height: windowDims.height*.6,
+    width: windowDims.width*.93,
     marginTop: 65,
     marginLeft: 10,
     marginRight: 10
-  }
+  },
+  descriptionStyle: {
+    fontSize: 16,
+    fontWeight: '600',
+    padding: 10
+  },
 };
 
 const mapStateToProps = state => {

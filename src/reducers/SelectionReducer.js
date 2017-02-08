@@ -2,7 +2,8 @@
 
 const initialState = [
     {"id":0,"titleText":"CHANGE TO BLANK FROM REDUCER","category":"carbs","titleImage":"https://dl.dropboxusercontent.com/s/dg9ftsssexbgb85/garlic-pasta.jpg"},
-    {"id":1,"backText":"CHANGE BACKGROUND IMAGE","category":"protein","backImage":"https://dl.dropboxusercontent.com/s/bkv9xjl3w0ii8b1/Ovo-Title.jpg"}
+    {"id":1,"backText":"CHANGE BACKGROUND IMAGE","category":"protein","backImage":"https://dl.dropboxusercontent.com/s/bkv9xjl3w0ii8b1/Ovo-Title.jpg"},
+    {"id":2,"promoText":"CHANGE PROMO IMAGE","category":"protein","promoImage":"https://dl.dropboxusercontent.com/s/bkv9xjl3w0ii8b1/Ovo-Title.jpg"},
   ]
 
 

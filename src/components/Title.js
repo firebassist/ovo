@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, Image } from 'react-native'
+import { ScrollView, View, Text, Image, Dimensions } from 'react-native'
 
 import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
+import { SimpleButton, Card, CardSection } from './common';
 import BackgroundImage from './BackGroundImage';
+
+const windowDims = Dimensions.get('window')
+
 
 class Title extends Component {
 
@@ -18,40 +22,57 @@ class Title extends Component {
     const titleT = this.props.librariesFromList[0].titleText
     const titleImg = this.props.librariesFromList[0].titleImage
     const backImg = this.props.librariesFromList[1].backImage
+    const promoT = this.props.librariesFromList[2].promoText
+    const promoImg = this.props.librariesFromList[2].promoImage
 
     return (
-        <BackgroundImage source={{ uri: backImg }}>
+      <BackgroundImage source={{ uri: backImg }}>
+          <Card style={{ paddingTop: 200 }}>
 
-          <ScrollView contentContainerStyle={styles.wrapStyle}>
+
+<View style={styles.logoWrapStyle}>
             <Image
               source={{ uri: titleImg }}
-              style={{ height: 80, width: 100 }}
+              style={styles.titleLogoStyle}
             />
 
-            <Text style={styles.mainText}>
-              {titleT}
+
+</View>
+<View style={styles.promoWrapStyle}>
+            <Image
+              source={{ uri: promoImg }}
+              style={{ height: 120, width: 150 }}
+            />
+
+            <Text style={styles.promText}>
+              {promoT}
             </Text>
-
-            <Image
-              source={{ uri: titleImg }}
-              style={{ height: 80, width: 100 }}
-            />
-
-          </ScrollView>
+</View>
+          </Card>
         </BackgroundImage>
     );
   }
 }
 
 const styles = {
-  wrapStyle: {
+  logoWrapStyle: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 165
+    paddingBottom: 10
   },
-  mainText: {
+  promoWrapStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 5,
+    backgroundColor: 'white'
+  },
+  titleLogoStyle: {
+    height: 80,
+    width: 120
+  },
+  promoText: {
     textAlign: 'center',
-    color: 'white',
+    color: '#000000',
     backgroundColor: 'rgba(0,0,0,0)',
     fontSize: 16
   }
