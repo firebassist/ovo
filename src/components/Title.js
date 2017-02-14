@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import * as actions from '../actions';
 
-import { SimpleButton, Card, CardSection } from './common';
+import { Card, CardSection } from './common';
 import BackgroundImage from './BackGroundImage';
 
 const windowDims = Dimensions.get('window')

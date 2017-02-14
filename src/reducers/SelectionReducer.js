@@ -1,4 +1,3 @@
-//import data from './LibraryList.json'
 
 const initialState = [
     {"id":0,
@@ -16,41 +15,11 @@ const initialState = [
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'select_cat':
-    console.log("cat")
-    console.log(action.payloadCategory)
-
-
-        return state
-
-
-
-    case 'add_library':
-      return [
-        ...state, {
-          id: v4(),
-          title: action.payloadTitle,
-          description: action.payloadDescription
-        }
-      ]
-
-    case 'remove_library':
-        console.log(action.payloadId + ' SELECTED')
-
-        const todoId = action.payloadId;
-          return state.filter(todo => todo.id !== todoId);
 
     case 'fetch_menu':
-      console.log("FETCHED")
-      console.log(state)
       let obj = action.payload
       state = Object.assign({}, obj);
-      console.log(state)
       return state
-
-
-
-
 
     default:
       return state;

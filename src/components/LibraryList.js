@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import ListItem from './ListItem';
 
+
 class LibraryList extends Component {
   constructor (props) {
     super(props)
@@ -24,9 +25,7 @@ class LibraryList extends Component {
         dataSource={dataSource}
         renderRow={this.renderRow}
         contentContainerStyle={styles.row}
-
       />
-
     );
   }
 }
