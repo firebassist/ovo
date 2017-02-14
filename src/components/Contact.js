@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
 
-//import Header from './common/Header';
 import MapView from 'react-native-maps';
 
 
 class Contact extends Component {
 
   render() {
+    const titleAdd = this.props.librariesFromList[0].titleAddress
+    const titleCont = this.props.librariesFromList[0].titleContact
+    const titleWeb = this.props.librariesFromList[0].titleWebsite
+
     return (
       <View style={{ paddingTop: 65 }}>
 
@@ -30,12 +34,13 @@ class Contact extends Component {
       </MapView>
 
         <Text style={styles.mainText}>
-          Bahay Sa Don Antonio: 26 Holy Spirit Drive
-          Quezon City, Philippines
+          {titleAdd}
         </Text>
         <Text style={styles.mainText}>
-          https://www.facebook.com/ourversionof/
-          Call: +63 917 824 2271
+          {titleCont}
+        </Text>
+        <Text style={styles.mainText}>
+          {titleWeb}
         </Text>
 
       </View>
@@ -59,6 +64,8 @@ const styles = {
   }
 }
 
+const mapStateToProps = state => {
+  return { librariesFromList: state.selectedLibraryIdFromReducer }
+}
 
-
-export default Contact;
+export default connect(mapStateToProps, null)(Contact);

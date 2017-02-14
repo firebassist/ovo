@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import Title from './components/Title';
 import LibraryList from './components/LibraryList';
 import ItemView from './components/ItemView';
+import PromoView from './components/PromoView';
 import Contact from './components/Contact';
 
 import MenuList from './components/MenuList'
@@ -51,7 +52,7 @@ class RouterComponent extends Component {
           key="titleMain"
           component={Title}
           renderRightButton={this.customRight}
-          title="OvO"
+          title="Our Version Of"
           titleStyle={styles.titleStyle}
           renderLeftButton={this.customLeft}
         />
@@ -74,6 +75,13 @@ class RouterComponent extends Component {
           component={ItemView}
           leftButtonIconStyle = {{ tintColor:'red'}}
           title="Satisfy Your Craving"
+          titleStyle={styles.titleStyle}
+        />
+
+        <Scene
+          key="promoView"
+          component={PromoView}
+          leftButtonIconStyle = {{ tintColor:'red'}}
           titleStyle={styles.titleStyle}
         />
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, Image, Dimensions } from 'react-native'
+import { ScrollView, View, Text, Image, TouchableOpacity, Dimensions } from 'react-native'
 
 import { connect } from 'react-redux';
-
+import { Actions } from 'react-native-router-flux';
 import * as actions from '../actions';
 
 import { SimpleButton, Card, CardSection } from './common';
@@ -17,6 +17,15 @@ class Title extends Component {
     this.props.fetchMenuActionCreator(this.props.dispatch)
   }
 
+  onButtonPress() {
+    Actions.promoView(
+      { promoText: this.props.librariesFromList[2].promoText,
+        promoDescription: this.props.librariesFromList[2].promoDescription,
+        promoImage: this.props.librariesFromList[2].promoImage
+      }
+    );
+  }
+
 
   render() {
     const titleT = this.props.librariesFromList[0].titleText
@@ -29,27 +38,31 @@ class Title extends Component {
       <BackgroundImage source={{ uri: backImg }}>
           <Card style={{ paddingTop: 200 }}>
 
+            <View style={styles.logoWrapStyle}>
+              <Image
+                source={{ uri: titleImg }}
+                style={styles.titleLogoStyle}
+              />
+            </View>
 
-<View style={styles.logoWrapStyle}>
-            <Image
-              source={{ uri: titleImg }}
-              style={styles.titleLogoStyle}
-            />
+            <TouchableOpacity
+                onPress={this.onButtonPress.bind(this)}>
 
+              <View style={styles.promoWrapStyle}>
+                  <Image
+                    source={{ uri: promoImg }}
+                    style={styles.promoImgStyle}
+                  />
 
-</View>
-<View style={styles.promoWrapStyle}>
-            <Image
-              source={{ uri: promoImg }}
-              style={{ height: 120, width: 150 }}
-            />
+                  <Text style={styles.promText}>
+                    {promoT}
+                  </Text>
+              </View>
 
-            <Text style={styles.promText}>
-              {promoT}
-            </Text>
-</View>
-          </Card>
-        </BackgroundImage>
+            </TouchableOpacity>
+
+        </Card>
+      </BackgroundImage>
     );
   }
 }
@@ -58,23 +71,27 @@ const styles = {
   logoWrapStyle: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 10
+    paddingBottom: 70
   },
   promoWrapStyle: {
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row',
     padding: 5,
-    backgroundColor: 'white'
+    backgroundColor: 'rgba(255, 255, 255, .6)'
   },
   titleLogoStyle: {
+    height: 100,
+    width: 150
+  },
+  promoImgStyle: {
     height: 80,
     width: 120
   },
   promoText: {
     textAlign: 'center',
     color: '#000000',
-    backgroundColor: 'rgba(0,0,0,0)',
-    fontSize: 16
+    fontSize: 18
   }
 }
 
